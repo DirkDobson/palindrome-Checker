@@ -1,15 +1,19 @@
+require 'pry'
+require 'colorize'
 
-def palin 
-  word = gets.to_s
-  word.split('')
-  puts word
-  word.each do |letter|
-    for i = 0 i < word.length ++i
-    
-    if word[i] = letter
-     puts words
+def main
+  print `clear`
+  puts "----palindrome checker----".green
+  @word = gets.strip.downcase.gsub(" ", "").split("")
+  check
+end
+
+def check
+  reverse = []
+  @word.each { |letter| reverse.unshift(letter) }
+  if @word == reverse
+    puts "it's a palindrome.".green
+  else
+    puts "nope.".red
   end
 end
-end
-
-palin
